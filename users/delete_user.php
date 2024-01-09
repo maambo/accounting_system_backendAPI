@@ -5,7 +5,7 @@ if(isset($id)){
 $remove = $conn->query("delete from users where id =".$id);
 
 if($remove){
-	echo 1;
+	echo json_encode("success");
 }else{
-	echo 2;
+	echo json_encode("error");
 }}

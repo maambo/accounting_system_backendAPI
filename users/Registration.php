@@ -26,7 +26,7 @@
 }
 
 	}else{
-		echo "please Enter the username";
+		echo json_encode("please Enter the username");
 	}
 
 
