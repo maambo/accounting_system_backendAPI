@@ -1,3 +1,43 @@
+<?php
+
+//varables needed from client
+//Company_ID                            (Logo),(Company_name),(TPIN),(Contact),(Address),(City),(County)
+
+//Customer_ID                           (customer_name),(Contact/Email),(Address),(City),(County)
+
+//Item_ID                               (name),(price)
+
+//Quantity                              (number)
+
+
+
+//===================================need for getting querys for above data=======================================
+
+$date= date("j-F-Y");
+$rand = rand(10000,99999);
+$Quotation_ID ="KP".$rand;
+$Commpany_name = "Kabani Pharmaceuticals";
+$TPIN = 2001280365;
+$contactPrifix = "+26";
+$Contact = $contactPrifix."0976653445";
+$Email = "Kabanipharmaceuticals@gmail.com";
+$Address = "Kabulonga off kundu Road, 707";
+$City = "Lusaka";
+$County= "Zambia";
+
+//customer Data
+
+$Customer_name = "Sefula Mission Hospital";
+$Cus_contact =$contactPrifix."09629480425";
+$Cus_TPIN = 3745953958;
+$Cus_Email = "SefulaMaission@gmail.com";
+$Cus_Address = "93274 Northmead";
+$Cus_City = "Ndola";
+$Cus_County ="Zambia";
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +57,7 @@
             <tr>
               <td class="w-full align-top">
                 <div>
-                  <img src="https://menkoff.com/assets/brand-sample.png" class="h-12" />
+                  <img src="../logo.jpg" class="h-12" />
                 </div>
               </td>
 
@@ -29,13 +69,13 @@
                         <td class="border-r pr-4">
                           <div>
                             <p class="whitespace-nowrap text-slate-400 text-right">Date</p>
-                            <p class="whitespace-nowrap font-bold text-main text-right">April 26, 2023</p>
+                            <p class="whitespace-nowrap font-bold text-main text-right"><?=$date?></p>
                           </div>
                         </td>
                         <td class="pl-4">
                           <div>
                             <p class="whitespace-nowrap text-slate-400 text-right">Invoice #</p>
-                            <p class="whitespace-nowrap font-bold text-main text-right">BRA-00335</p>
+                            <p class="whitespace-nowrap font-bold text-main text-right"><?=$Quotation_ID?></p>
                           </div>
                         </td>
                       </tr>
@@ -54,22 +94,21 @@
             <tr>
               <td class="w-1/2 align-top">
                 <div class="text-sm text-neutral-600">
-                  <p class="font-bold">Supplier Company INC</p>
-                  <p>Number: 23456789</p>
-                  <p>VAT: 23456789</p>
-                  <p>6622 Abshire Mills</p>
-                  <p>Port Orlofurt, 05820</p>
-                  <p>United States</p>
+                  <p class="font-bold"><?=$Commpany_name?></p>
+                  <p>Contact: <?=$Contact?></p>
+                  <p>Email: <?=$Email?></p>
+                  <p>TPIN: <?=$TPIN?></p>
+                  <p><?=$Address?></p>
+                  <p><?=$City.", ".$County?></p>
                 </div>
               </td>
               <td class="w-1/2 align-top text-right">
                 <div class="text-sm text-neutral-600">
-                  <p class="font-bold">Customer Company</p>
-                  <p>Number: 123456789</p>
-                  <p>VAT: 23456789</p>
-                  <p>9552 Vandervort Spurs</p>
-                  <p>Paradise, 43325</p>
-                  <p>United States</p>
+                  <p class="font-bold"><?=$Customer_name?></p>
+                  <p>Contact:<?=$Cus_contact?></p>
+                  <p>Email: <?=$Cus_Email?></p>
+                  <p><?=$Cus_Address?></p>
+                  <p><?=$Cus_City.", ".$Cus_County?></p>
                 </div>
               </td>
             </tr>
@@ -93,7 +132,7 @@
           <tbody>
             <tr>
               <td class="border-b py-3 pl-3">1.</td>
-              <td class="border-b py-3 pl-2">Montly accountinc services</td>
+              <td class="border-b py-3 pl-2">Product 1</td>
               <td class="border-b py-3 pl-2 text-right">$150.00</td>
               <td class="border-b py-3 pl-2 text-center">1</td>
               <td class="border-b py-3 pl-2 text-center">20%</td>
@@ -102,7 +141,7 @@
             </tr>
             <tr>
               <td class="border-b py-3 pl-3">2.</td>
-              <td class="border-b py-3 pl-2">Taxation consulting (hour)</td>
+              <td class="border-b py-3 pl-2">Product 2</td>
               <td class="border-b py-3 pl-2 text-right">$60.00</td>
               <td class="border-b py-3 pl-2 text-center">2</td>
               <td class="border-b py-3 pl-2 text-center">20%</td>
@@ -111,7 +150,7 @@
             </tr>
             <tr>
               <td class="border-b py-3 pl-3">3.</td>
-              <td class="border-b py-3 pl-2">Bookkeeping services</td>
+              <td class="border-b py-3 pl-2">Product 3</td>
               <td class="border-b py-3 pl-2 text-right">$50.00</td>
               <td class="border-b py-3 pl-2 text-center">1</td>
               <td class="border-b py-3 pl-2 text-center">20%</td>
@@ -173,16 +212,15 @@
 
       <div class="px-14 py-10 text-sm text-neutral-700">
         <p class="text-main font-bold">Notes</p>
-        <p class="italic">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries
-          for previewing layouts and visual mockups.</p>
+        <p class="italic">Quotation will be valid for the nest 15 days .</p>
         </dvi>
 
         <footer class="fixed bottom-0 left-0 bg-slate-100 w-full text-neutral-600 text-center text-xs py-3">
           Supplier Company
           <span class="text-slate-300 px-2">|</span>
-          info@company.com
+          My@company.com
           <span class="text-slate-300 px-2">|</span>
-          +1-202-555-0106
+          +26097242523565
         </footer>
       </div>
     </div>
