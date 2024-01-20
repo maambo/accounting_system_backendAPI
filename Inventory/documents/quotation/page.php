@@ -15,8 +15,8 @@
 
 $date= date("j-F-Y");
 $rand = rand(10000,99999);
-$Quotation_ID ="KP".$rand;
-$Commpany_name = "Kabani Pharmaceuticals";
+$Quotation_ID ="KP-".$rand;
+$Company_name = "Kabani Pharmaceuticals";
 $TPIN = 2001280365;
 $contactPrifix = "+26";
 $Contact = $contactPrifix."0976653445";
@@ -24,6 +24,20 @@ $Email = "Kabanipharmaceuticals@gmail.com";
 $Address = "Kabulonga off kundu Road, 707";
 $City = "Lusaka";
 $County= "Zambia";
+
+//Bank
+
+$Bank ="FNB";
+$Account_Name = "Kabani Pharmaceuticals Ltd";
+$Account_Number = 63070668381;
+
+
+//items
+$inventory =array('items'=> array(
+                        'id'=> "13234",
+                        'Qty'=>"4"));
+
+
 
 //customer Data
 
@@ -36,6 +50,10 @@ $Cus_City = "Ndola";
 $Cus_County ="Zambia";
 
 
+
+$Row = array([
+//  Products 
+])
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +92,7 @@ $Cus_County ="Zambia";
                         </td>
                         <td class="pl-4">
                           <div>
-                            <p class="whitespace-nowrap text-slate-400 text-right">Invoice #</p>
+                            <p class="whitespace-nowrap text-slate-400 text-right">QUOTATION</p>
                             <p class="whitespace-nowrap font-bold text-main text-right"><?=$Quotation_ID?></p>
                           </div>
                         </td>
@@ -94,7 +112,7 @@ $Cus_County ="Zambia";
             <tr>
               <td class="w-1/2 align-top">
                 <div class="text-sm text-neutral-600">
-                  <p class="font-bold"><?=$Commpany_name?></p>
+                  <p class="font-bold"><?=$Company_name?></p>
                   <p>Contact: <?=$Contact?></p>
                   <p>Email: <?=$Email?></p>
                   <p>TPIN: <?=$TPIN?></p>
@@ -133,29 +151,29 @@ $Cus_County ="Zambia";
             <tr>
               <td class="border-b py-3 pl-3">1.</td>
               <td class="border-b py-3 pl-2">Product 1</td>
-              <td class="border-b py-3 pl-2 text-right">$150.00</td>
+              <td class="border-b py-3 pl-2 text-right">K150.00</td>
               <td class="border-b py-3 pl-2 text-center">1</td>
               <td class="border-b py-3 pl-2 text-center">20%</td>
-              <td class="border-b py-3 pl-2 text-right">$150.00</td>
-              <td class="border-b py-3 pl-2 pr-3 text-right">$180.00</td>
+              <td class="border-b py-3 pl-2 text-right">K150.00</td>
+              <td class="border-b py-3 pl-2 pr-3 text-right">K180.00</td>
             </tr>
             <tr>
               <td class="border-b py-3 pl-3">2.</td>
               <td class="border-b py-3 pl-2">Product 2</td>
-              <td class="border-b py-3 pl-2 text-right">$60.00</td>
+              <td class="border-b py-3 pl-2 text-right">K60.00</td>
               <td class="border-b py-3 pl-2 text-center">2</td>
               <td class="border-b py-3 pl-2 text-center">20%</td>
-              <td class="border-b py-3 pl-2 text-right">$120.00</td>
-              <td class="border-b py-3 pl-2 pr-3 text-right">$144.00</td>
+              <td class="border-b py-3 pl-2 text-right">K120.00</td>
+              <td class="border-b py-3 pl-2 pr-3 text-right">K144.00</td>
             </tr>
             <tr>
               <td class="border-b py-3 pl-3">3.</td>
               <td class="border-b py-3 pl-2">Product 3</td>
-              <td class="border-b py-3 pl-2 text-right">$50.00</td>
+              <td class="border-b py-3 pl-2 text-right">K50.00</td>
               <td class="border-b py-3 pl-2 text-center">1</td>
               <td class="border-b py-3 pl-2 text-center">20%</td>
-              <td class="border-b py-3 pl-2 text-right">$50.00</td>
-              <td class="border-b py-3 pl-2 pr-3 text-right">$60.00</td>
+              <td class="border-b py-3 pl-2 text-right">K50.00</td>
+              <td class="border-b py-3 pl-2 pr-3 text-right">K60.00</td>
             </tr>
             <tr>
               <td colspan="7">
@@ -171,7 +189,7 @@ $Cus_County ="Zambia";
                                 <div class="whitespace-nowrap text-slate-400">Net total:</div>
                               </td>
                               <td class="border-b p-3 text-right">
-                                <div class="whitespace-nowrap font-bold text-main">$320.00</div>
+                                <div class="whitespace-nowrap font-bold text-main">K320.00</div>
                               </td>
                             </tr>
                             <tr>
@@ -179,7 +197,7 @@ $Cus_County ="Zambia";
                                 <div class="whitespace-nowrap text-slate-400">VAT total:</div>
                               </td>
                               <td class="p-3 text-right">
-                                <div class="whitespace-nowrap font-bold text-main">$64.00</div>
+                                <div class="whitespace-nowrap font-bold text-main">K64.00</div>
                               </td>
                             </tr>
                             <tr>
@@ -187,7 +205,7 @@ $Cus_County ="Zambia";
                                 <div class="whitespace-nowrap font-bold text-white">Total:</div>
                               </td>
                               <td class="bg-main p-3 text-right">
-                                <div class="whitespace-nowrap font-bold text-white">$384.00</div>
+                                <div class="whitespace-nowrap font-bold text-white">K384.00</div>
                               </td>
                             </tr>
                           </tbody>
@@ -203,24 +221,26 @@ $Cus_County ="Zambia";
       </div>
 
       <div class="px-14 text-sm text-neutral-700">
-        <p class="text-main font-bold">PAYMENT DETAILS</p>
-        <p>Banks of Banks</p>
-        <p>Bank/Sort Code: 1234567</p>
-        <p>Account Number: 123456678</p>
-        <p>Payment Reference: BRA-00335</p>
+        <p class="text-main font-bold">BANK DETAILS</p>
+        <p>Bank: <?=$Bank?></p>
+        <p>Account Name: <?=$Account_Name?></p>
+        <p>Account Number: <?=$Account_Number?></p>
       </div>
 
       <div class="px-14 py-10 text-sm text-neutral-700">
-        <p class="text-main font-bold">Notes</p>
-        <p class="italic">Quotation will be valid for the nest 15 days .</p>
+        <p class="text-main font-bold">*Note</p>
+        <p class="italic">1.Quotation will be valid for the next 10 days.</p>
+        <p class="italic">2.Payment terms: within 14.</p>
+        <p class="italic">3.Delivery period: within 2 days.</p>
+        <p class="italic">4.Currency: ZMW.</p>
         </dvi>
 
         <footer class="fixed bottom-0 left-0 bg-slate-100 w-full text-neutral-600 text-center text-xs py-3">
-          Supplier Company
+          <?=$Company_name?>
           <span class="text-slate-300 px-2">|</span>
-          My@company.com
+          <?=$Email?>
           <span class="text-slate-300 px-2">|</span>
-          +26097242523565
+          <?=$Contact?>
         </footer>
       </div>
     </div>
