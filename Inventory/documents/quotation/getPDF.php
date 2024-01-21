@@ -20,6 +20,7 @@ require_once ("../../../vendor/autoload.php");
 //===================================need for getting querys for above data=======================================
 
 $date= date("j-F-Y");
+$addBy = "Phiri Phiri";
 $rand = rand(10000,99999);
 $Quotation_ID ="KP-".$rand;
 $Company_name = "Kabani Pharmaceuticals";
@@ -252,7 +253,7 @@ $html .='<div class="px-14 text-sm text-neutral-700">
 </dvi>
 
 <footer class="fixed bottom-0 left-0 bg-slate-100 w-full text-neutral-600 text-center text-xs py-3">
-  '.$Company_name.'
+  Prepared By: '.$addBy.'
   <span class="text-slate-300 px-2">|</span>
   '.$Email.'
   <span class="text-slate-300 px-2">|</span>
