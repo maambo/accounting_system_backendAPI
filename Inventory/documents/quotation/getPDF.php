@@ -20,7 +20,7 @@ require_once ("../../../vendor/autoload.php");
 //===================================need for getting querys for above data=======================================
 
 $date= date("j-F-Y");
-$addBy = "Phiri Phiri";
+$addBy = "Phiri F Phiri";
 $rand = rand(10000,99999);
 $Quotation_ID ="KP-".$rand;
 $Company_name = "Kabani Pharmaceuticals";
