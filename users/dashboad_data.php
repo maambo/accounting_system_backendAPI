@@ -1,8 +1,8 @@
 <?php
 header("Access-Control-Allow-Origin: http://localhost:51383");
 include '../config.php';
-//if (!empty($_POST['userid'])) {
-    $userId = "1";//$_POST['userid'];
+if (!empty($_POST['userid'])) {
+    $userId = "1";$_POST['userid'];
 
     $fqry = $conn->query("SELECT * FROM users where id='$userId'");
 
@@ -19,9 +19,5 @@ include '../config.php';
 
         echo json_encode($data);
     } else {
-        echo json_encode("202");
-    }
-
-//} else {
-//    echo json_encode("404");
-//}
+        echo json_encode("404");
+        }    }
