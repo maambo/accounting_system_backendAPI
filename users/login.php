@@ -1,12 +1,12 @@
 <?php 
-header("Access-Control-Allow-Origin: http://localhost:51383");
+header("Access-Control-Allow-Origin: http://localhost:65191");
 	include '../config.php';
 
 	$data = array();
 
-	if($_GET['username'] && $_GET['password']){
-	$username = $_GET['username'];
-    $password = $_GET['password'];
+	if($_POST['username'] && $_POST['password']){
+	$username = $_POST['username'];
+    $password = $_POST['password'];
 	$fqry = $conn->query("SELECT id FROM users where username='$username' and password = '$password' ");
 	
 	if($fqry->num_rows > 0){
