@@ -1,9 +1,9 @@
 <?php
-header("Access-Control-Allow-Origin: http://localhost:51383");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 include '../config.php';
-if (!empty($_POST['userid'])) {
-    $userId = "1";$_POST['userid'];
-
+if (!empty($_POST['userId'])) {
+    $userId = $_POST['userId'];
     $fqry = $conn->query("SELECT * FROM users where id='$userId'");
 
     $data = array();

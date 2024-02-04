@@ -1,5 +1,6 @@
 <?php 
-header("Access-Control-Allow-Origin: http://localhost:65191");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 	include '../config.php';
 
 	$data = array();
