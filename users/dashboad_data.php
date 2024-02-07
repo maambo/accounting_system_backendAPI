@@ -14,8 +14,7 @@ if (!empty($_POST['userId'])) {
         $fqry1 = $conn->query("SELECT * FROM company_details where id='$company_id'");
         $companyDetails = $fqry1->fetch_assoc();
 
-        $data1 = array_merge(['status' => 200], $userDetails);
-        $data[] = array_merge($data1, $companyDetails);
+        $data[] = array_merge($userDetails,$companyDetails) ;
 
         echo json_encode($data);
     } else {
