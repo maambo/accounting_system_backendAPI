@@ -1,13 +1,13 @@
 <?php 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 	include '../config.php';
 	if(isset($_POST['username'])){
 	$username = $_POST['username'];
     $password = $_POST['password'];
 	$phone_no = $_POST['phone_no'];
-	$TPIN = $_POST['TPIN'];
 	$job_tittle =$_POST['job_tittle'];
 	$access = $_POST['access'];
-	$id = $_POST['id'];
 	$fqry = $conn->query("SELECT * FROM users where username='$username'");
 	
 	if($fqry->num_rows > 0){
@@ -50,5 +50,7 @@
 		echo json_encode("500");
 	}
 
+		}else{
+			echo "no image selected";
 		}}}
 ?>
