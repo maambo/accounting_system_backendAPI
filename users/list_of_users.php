@@ -1,12 +1,11 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 include_once "../config.php";
 
-$id= $_POST['id'];
-if(isset($id)){
-    $getUsers= $conn->query("SELECT * from users where id=".$id);
-}else{
-    $getUsers= $conn->query("SELECT * from users");
-}
+
+    $getUsers= $conn->query("SELECT username, job_title, access, nrc, Date  from users");
+
 $data = array();
 if($getUsers->num_rows > 0){
     while($row = $getUsers->fetch_assoc()){
