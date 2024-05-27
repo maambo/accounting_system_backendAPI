@@ -10,7 +10,7 @@ $data = array();
 if($getUsers->num_rows > 0){
     while($row = $getUsers->fetch_assoc()){
 	  
-	 
+        $row['Date'] = date('M d, Y',strtotime($row['Date']));
         $data[]= $row;
     }
     echo json_encode($data);
