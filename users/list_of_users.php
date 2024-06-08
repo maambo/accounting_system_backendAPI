@@ -4,7 +4,7 @@ header("Access-Control-Allow-Headers: *");
 include_once "../config.php";
 
 
-    $getUsers= $conn->query("SELECT username, job_title, access, nrc, Date  from users");
+    $getUsers= $conn->query("SELECT id, username, job_title, access, nrc, Date  from users");
 
 $data = array();
 if($getUsers->num_rows > 0){
